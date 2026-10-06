@@ -16,10 +16,7 @@ import ipaddress
 import os
 import platform
 import re
-try:
-    import resource
-except ImportError:
-    resource = None
+import resource
 import secrets
 import shutil
 import socket
