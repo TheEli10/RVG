@@ -44,7 +44,11 @@ from urllib.parse import quote
 from collections import deque, defaultdict
 from pathlib import Path
 import bottokentcpproxy
-from protocol.mtproto import mtproto_native as mtproto
+try:
+    from protocol.mtproto import mtproto_native as mtproto
+except Exception as e:
+    print(f"[!] Warning: MTProto disabled on WebAssembly: {e}")
+    mtproto = None
 from typing import Optional
 import base64
 import botgeneratedomin
